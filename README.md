@@ -51,7 +51,7 @@ in app build.gradle:
 	
 	dependencies {
       ...
-      implementation("com.github.Hazzatur:Document-Scanning-Android-SDK:1.1.3")
+      implementation("com.github.Hazzatur:Document-Scanning-Android-SDK:1.1.6")
 	}
 
 ### Usage
@@ -67,6 +67,7 @@ In your Application class:
 	    	configuration.imageQuality = 100  
 	    	configuration.imageSize = 1000000 // 1 MB  
 	    	configuration.imageType = Bitmap.CompressFormat.JPEG  
+	    	configuration.galleryButtonEnabled = false // default is true  
 	    	DocumentScanner.init(this, configuration) // or simply DocumentScanner.init(this)
         }   
     }
@@ -146,6 +147,9 @@ All errors are returned to app using `fun onError(error: DocumentScannerErrorMod
     * imageType can be Bitmap.CompressFormat.JPEG, Bitmap.CompressFormat.PNG or
       Bitmap.CompressFormat.WEBP
     * Default value is Bitmap.CompressFormat.JPEG
+* **galleryButtonEnabled**: 
+    * Enable or disable gallery button
+    * Default value is true
 
 ## Thanks
 

@@ -17,6 +17,7 @@ class BaseApp : Application() {
         val configuration = DocumentScanner.Configuration()
         configuration.imageQuality = FILE_QUALITY
         configuration.imageType = FILE_TYPE
+        configuration.galleryButtonEnabled = false
         DocumentScanner.init(this, configuration)
     }
 }

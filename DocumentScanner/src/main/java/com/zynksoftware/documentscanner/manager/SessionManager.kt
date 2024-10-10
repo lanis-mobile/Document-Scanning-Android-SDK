@@ -30,6 +30,7 @@ internal class SessionManager(context: Context) {
         private const val IMAGE_SIZE_KEY = "IMAGE_SIZE_KEY"
         private const val IMAGE_QUALITY_KEY = "IMAGE_QUALITY_KEY"
         private const val IMAGE_TYPE_KEY = "IMAGE_TYPE_KEY"
+        private const val GALLERY_BUTTON_ENABLED = "GALLERY_BUTTON_ENABLED"
 
         private const val DEFAULT_IMAGE_TYPE = "jpg"
     }
@@ -60,6 +61,14 @@ internal class SessionManager(context: Context) {
 
     fun setImageType(type: Bitmap.CompressFormat) {
         preferences.edit().putString(IMAGE_TYPE_KEY, type.extension()).apply()
+    }
+
+    fun isGalleryButtonEnabled(): Boolean {
+        return preferences.getBoolean(GALLERY_BUTTON_ENABLED, true)
+    }
+
+    fun setGalleryButtonEnabled(enabled: Boolean) {
+        preferences.edit().putBoolean(GALLERY_BUTTON_ENABLED, enabled).apply()
     }
 
     private fun compressFormat(format: String) = when (format.lowercase(Locale.getDefault())) {

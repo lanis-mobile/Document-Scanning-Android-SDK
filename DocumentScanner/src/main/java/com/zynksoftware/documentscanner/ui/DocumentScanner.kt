@@ -34,12 +34,14 @@ object DocumentScanner {
         }
         sessionManager.setImageSize(configuration.imageSize)
         sessionManager.setImageType(configuration.imageType)
+        sessionManager.setGalleryButtonEnabled(configuration.galleryButtonEnabled)
     }
 
 
     data class Configuration(
         var imageQuality: Int = 100,
         var imageSize: Long = -1,
-        var imageType: Bitmap.CompressFormat = Bitmap.CompressFormat.JPEG
+        var imageType: Bitmap.CompressFormat = Bitmap.CompressFormat.JPEG,
+        var galleryButtonEnabled: Boolean = true
     )
 }

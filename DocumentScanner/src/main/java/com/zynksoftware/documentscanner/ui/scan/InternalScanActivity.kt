@@ -72,6 +72,7 @@ abstract class InternalScanActivity : AppCompatActivity() {
     internal var transformedImage: Bitmap? = null
     private var imageQuality: Int = 100
     private var imageSize: Long = NOT_INITIALIZED
+    internal var galleryButtonEnabled: Boolean = true
     private lateinit var imageType: Bitmap.CompressFormat
     internal var shouldCallOnClose = true
 
@@ -81,6 +82,7 @@ abstract class InternalScanActivity : AppCompatActivity() {
         imageType = sessionManager.getImageType()
         imageSize = sessionManager.getImageSize()
         imageQuality = sessionManager.getImageQuality()
+        galleryButtonEnabled = sessionManager.isGalleryButtonEnabled()
         reInitOriginalImageFile()
     }
 
