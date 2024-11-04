@@ -64,7 +64,7 @@ internal class SessionManager(context: Context) {
     }
 
     fun isGalleryButtonEnabled(): Boolean {
-        return preferences.getBoolean(GALLERY_BUTTON_ENABLED, true)
+        return preferences.getBoolean(GALLERY_BUTTON_ENABLED, false)
     }
 
     fun setGalleryButtonEnabled(enabled: Boolean) {

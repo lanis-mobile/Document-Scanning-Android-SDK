@@ -72,7 +72,7 @@ abstract class InternalScanActivity : AppCompatActivity() {
     internal var transformedImage: Bitmap? = null
     private var imageQuality: Int = 100
     private var imageSize: Long = NOT_INITIALIZED
-    internal var galleryButtonEnabled: Boolean = true
+    internal var galleryButtonEnabled: Boolean = false
     private lateinit var imageType: Bitmap.CompressFormat
     internal var shouldCallOnClose = true
 

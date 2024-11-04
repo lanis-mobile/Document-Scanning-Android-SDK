@@ -3,4 +3,5 @@
     <string name="zdc_cancel">Cancelar</string>
     <string name="zdc_auto">Auto</string>
     <string name="zdc_manual">Manual</string>
+    <string name="select_from_gallery">Seleccionar de la galería</string>
 </resources>

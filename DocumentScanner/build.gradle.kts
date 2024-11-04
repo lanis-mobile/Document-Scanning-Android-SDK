@@ -65,7 +65,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.hazzatur"
                 artifactId = "Document-Scanning-Android-SDK"
-                version = "1.1.6"
+                version = "1.1.7"
             }
         }
     }

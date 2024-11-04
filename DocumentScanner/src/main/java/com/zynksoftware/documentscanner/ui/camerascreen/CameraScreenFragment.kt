@@ -103,8 +103,11 @@ internal class CameraScreenFragment : BaseFragment(), ScanSurfaceListener {
         binding.scanSurfaceView.lifecycleOwner = this
         binding.scanSurfaceView.listener = this
         binding.scanSurfaceView.originalImageFile = getScanActivity().originalImageFile
-        binding.galleryButton.visibility =
-            if (getScanActivity().galleryButtonEnabled) View.VISIBLE else View.GONE
+        if (getScanActivity().galleryButtonEnabled) {
+            binding.galleryButton.visibility = View.VISIBLE
+        } else {
+            binding.galleryButton.visibility = View.GONE
+        }
 
         checkForCameraPermissions()
         initListeners()

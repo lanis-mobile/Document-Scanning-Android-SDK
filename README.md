@@ -67,7 +67,7 @@ In your Application class:
 	    	configuration.imageQuality = 100  
 	    	configuration.imageSize = 1000000 // 1 MB  
 	    	configuration.imageType = Bitmap.CompressFormat.JPEG  
-	    	configuration.galleryButtonEnabled = false // default is true  
+	    	configuration.galleryButtonEnabled = false // default is false  
 	    	DocumentScanner.init(this, configuration) // or simply DocumentScanner.init(this)
         }   
     }
@@ -149,7 +149,7 @@ All errors are returned to app using `fun onError(error: DocumentScannerErrorMod
     * Default value is Bitmap.CompressFormat.JPEG
 * **galleryButtonEnabled**: 
     * Enable or disable gallery button
-    * Default value is true
+    * Default value is false
 
 ## Thanks
 
