@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.zynksoftware.documentscanner"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 23
@@ -65,33 +65,26 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.hazzatur"
                 artifactId = "Document-Scanning-Android-SDK"
-                version = "1.1.7"
+                version = "1.1.8"
             }
         }
     }
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
-
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-
-    implementation("io.reactivex.rxjava3:rxandroid:3.0.0")
-
-    implementation("com.github.zynkware:Tiny-OpenCV:4.4.0-4")
-
-    implementation("androidx.camera:camera-camera2:1.3.1")
-    implementation("androidx.camera:camera-lifecycle:1.3.1")
-    implementation("androidx.camera:camera-view:1.3.1")
-
-    implementation("com.github.fondesa:kpermissions:3.3.0")
-
-    implementation("androidx.exifinterface:exifinterface:1.3.7")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
-    implementation("id.zelory:compressor:3.0.1")
-    implementation("androidx.test:monitor:1.6.1")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
-    androidTestImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.rxandroid)
+    implementation(libs.tiny.opencv)
+    implementation(libs.camera.camera2)
+    implementation(libs.camera.lifecycle)
+    implementation(libs.camera.view)
+    implementation(libs.kpermissions)
+    implementation(libs.exifinterface)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.compressor)
+    implementation(libs.androidx.test.monitor)
+    testImplementation(libs.junit.jupiter)
+    androidTestImplementation(libs.junit.jupiter)
 }

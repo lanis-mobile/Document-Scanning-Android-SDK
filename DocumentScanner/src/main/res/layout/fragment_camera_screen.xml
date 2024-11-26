@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <com.zynksoftware.documentscanner.ui.components.scansurface.ScanSurfaceView
@@ -52,9 +52,9 @@
             android:layout_marginEnd="@dimen/zdc_medium_padding"
             android:layout_marginBottom="@dimen/zdc_medium_padding"
             android:contentDescription="@string/select_from_gallery"
+            android:src="@drawable/zdc_gallery_icon"
             android:visibility="gone"
-            tools:visibility="visible"
-            android:src="@drawable/zdc_gallery_icon" />
+            tools:visibility="visible" />
 
         <View
             android:id="@+id/cameraCaptureButton"

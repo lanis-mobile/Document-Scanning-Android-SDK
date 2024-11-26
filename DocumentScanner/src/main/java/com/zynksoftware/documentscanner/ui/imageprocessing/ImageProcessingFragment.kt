@@ -144,7 +144,7 @@ internal class ImageProcessingFragment : BaseFragment() {
                     paint.colorFilter = ColorMatrixColorFilter(ma)
                     getScanActivity().croppedImage?.let { canvas.drawBitmap(it, 0f, 0f, paint) }
                     getScanActivity().transformedImage =
-                        bmpMonochrome.copy(bmpMonochrome.config, true)
+                        bmpMonochrome.config?.let { bmpMonochrome.copy(it, true) }
                     getScanActivity().runOnUiThread {
                         hideProgressBar()
                         binding.imagePreview.setImageBitmap(getScanActivity().transformedImage)
