@@ -33,6 +33,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import com.zynksoftware.documentscanner.R
 import com.zynksoftware.documentscanner.common.extensions.scaledBitmap
 import com.zynksoftware.documentscanner.common.utils.OpenCvNativeBridge
@@ -186,5 +188,19 @@ internal class ImageCropFragment : BaseFragment() {
 
     private fun closeFragment() {
         getScanActivity().closeCurrentFragment()
+    }
+
+    override fun configureEdgeToEdgeInsets(insets: WindowInsetsCompat) {
+        val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+        with(binding) {
+            holderImageView.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                topMargin = systemBarsInsets.top
+            }
+
+            bottomBar.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = systemBarsInsets.bottom
+            }
+        }
     }
 }

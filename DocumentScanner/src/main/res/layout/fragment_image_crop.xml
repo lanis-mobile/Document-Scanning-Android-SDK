@@ -21,7 +21,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:adjustViewBounds="true" />
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/preview_image" />
 
         </FrameLayout>
 
@@ -37,8 +38,7 @@
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/zdc_top_bar_height"
-        android:layout_alignParentBottom="true"
-        android:background="@android:color/white">
+        android:layout_alignParentBottom="true">
 
         <ImageView
             android:id="@+id/closeButton"
@@ -46,6 +46,7 @@
             android:layout_height="@dimen/zdc_image_view_icons_dimens"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/zdc_medium_padding"
+            android:contentDescription="@string/cancel"
             android:padding="@dimen/zdc_x_small_padding"
             android:src="@drawable/icon_close" />
 
@@ -56,6 +57,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/zdc_medium_padding"
+            android:contentDescription="@string/confirm"
             android:padding="@dimen/zdc_xx_small_padding"
             android:src="@drawable/zdc_tick_icon" />
     </RelativeLayout>

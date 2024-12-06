@@ -30,6 +30,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import com.zynksoftware.documentscanner.common.extensions.rotateBitmap
 import com.zynksoftware.documentscanner.databinding.FragmentImageProcessingBinding
 import com.zynksoftware.documentscanner.ui.base.BaseFragment
@@ -164,5 +166,19 @@ internal class ImageProcessingFragment : BaseFragment() {
 
     private fun selectFinalScannerResults() {
         getScanActivity().finalScannerResult()
+    }
+
+    override fun configureEdgeToEdgeInsets(insets: WindowInsetsCompat) {
+        val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+        with(binding) {
+            imagePreview.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                topMargin = systemBarsInsets.top
+            }
+
+            bottomBar.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = systemBarsInsets.bottom
+            }
+        }
     }
 }

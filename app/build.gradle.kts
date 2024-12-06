@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId = "com.zynksoftware.documentscannersample"
-        minSdk = 23
+        minSdk = 26
         targetSdk = 35
-        versionCode = 8
-        versionName = "1.1.3"
+        versionCode = 9
+        versionName = "1.2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.activity)
     implementation(libs.constraintlayout)
     testImplementation(libs.junit4)
     androidTestImplementation(libs.androidx.test.junit)

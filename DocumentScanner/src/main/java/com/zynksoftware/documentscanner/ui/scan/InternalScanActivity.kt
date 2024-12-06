@@ -24,7 +24,9 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
 import android.widget.FrameLayout
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -49,6 +51,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.io.File
+
 
 abstract class InternalScanActivity : AppCompatActivity() {
 
@@ -77,6 +80,7 @@ abstract class InternalScanActivity : AppCompatActivity() {
     internal var shouldCallOnClose = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setupEdgeToEdge()
         super.onCreate(savedInstanceState)
         val sessionManager = SessionManager(this)
         imageType = sessionManager.getImageType()
@@ -202,5 +206,12 @@ abstract class InternalScanActivity : AppCompatActivity() {
         progressView.hide()
 
         showCameraScreen()
+    }
+
+    private fun setupEdgeToEdge() {
+        enableEdgeToEdge()
+        val insetsController = WindowInsetsControllerCompat(window, window.decorView)
+        insetsController.isAppearanceLightStatusBars = false
+        insetsController.isAppearanceLightNavigationBars = false
     }
 }

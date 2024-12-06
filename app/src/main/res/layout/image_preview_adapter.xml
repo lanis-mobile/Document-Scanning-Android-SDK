@@ -8,7 +8,7 @@
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/zdc_top_bar_height"
-        android:background="@color/zdc_transparent_black">
+        android:background="@color/zdc_black">
 
         <TextView
             android:id="@+id/saveButton"

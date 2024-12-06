@@ -29,6 +29,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import com.fondesa.kpermissions.allGranted
 import com.fondesa.kpermissions.allShouldShowRationale
 import com.fondesa.kpermissions.extension.permissionsBuilder
@@ -326,5 +328,13 @@ internal class CameraScreenFragment : BaseFragment(), ScanSurfaceListener {
 
     override fun showFlashModeOff() {
         binding.flashButton.setImageResource(R.drawable.zdc_flash_off)
+    }
+
+    override fun configureEdgeToEdgeInsets(insets: WindowInsetsCompat) {
+        val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+        binding.topBar.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+            topMargin = systemBarsInsets.top
+        }
     }
 }

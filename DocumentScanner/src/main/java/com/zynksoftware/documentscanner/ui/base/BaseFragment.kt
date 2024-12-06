@@ -19,13 +19,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
 package com.zynksoftware.documentscanner.ui.base
 
+import android.os.Bundle
+import android.view.View
 import android.widget.RelativeLayout
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.zynksoftware.documentscanner.R
 import com.zynksoftware.documentscanner.common.extensions.hide
 import com.zynksoftware.documentscanner.common.extensions.show
 
 internal abstract class BaseFragment : Fragment() {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupEdgeToEdge()
+    }
+
+    private fun setupEdgeToEdge() {
+        ViewCompat.setOnApplyWindowInsetsListener(view ?: return) { _, insets ->
+            configureEdgeToEdgeInsets(insets)
+            insets
+        }
+    }
+
+    /**
+     * Allows child fragments to customize how insets are applied.
+     *
+     * @param insets The system window insets to be applied.
+     */
+    protected abstract fun configureEdgeToEdgeInsets(insets: WindowInsetsCompat)
 
     fun showProgressBar() {
         view?.findViewById<RelativeLayout>(R.id.progressLayout)?.show()
@@ -34,5 +57,4 @@ internal abstract class BaseFragment : Fragment() {
     fun hideProgressBar() {
         view?.findViewById<RelativeLayout>(R.id.progressLayout)?.hide()
     }
-
 }

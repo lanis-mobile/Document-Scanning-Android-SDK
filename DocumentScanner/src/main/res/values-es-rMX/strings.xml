@@ -4,4 +4,10 @@
     <string name="zdc_auto">Auto</string>
     <string name="zdc_manual">Manual</string>
     <string name="select_from_gallery">Seleccionar de la galería</string>
+    <string name="toggle_flash">Alternar flash</string>
+    <string name="preview_image">Preview de imagen</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="magic_wand">Varita mágica</string>
+    <string name="rotate">Rotar</string>
 </resources>

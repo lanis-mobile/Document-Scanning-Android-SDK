@@ -152,7 +152,7 @@ internal class ScanSurfaceView : FrameLayout {
             .setTargetResolution(previewSize)
             .build()
             .also {
-                it.setSurfaceProvider(binding.viewFinder.surfaceProvider)
+                it.surfaceProvider = binding.viewFinder.surfaceProvider
             }
 
         setImageCapture()

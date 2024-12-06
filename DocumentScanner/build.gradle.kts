@@ -9,7 +9,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        minSdk = 23
+        minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -65,7 +65,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.hazzatur"
                 artifactId = "Document-Scanning-Android-SDK"
-                version = "1.1.8"
+                version = "1.2.0"
             }
         }
     }
@@ -75,6 +75,7 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.activity)
     implementation(libs.rxandroid)
     implementation(libs.tiny.opencv)
     implementation(libs.camera.camera2)

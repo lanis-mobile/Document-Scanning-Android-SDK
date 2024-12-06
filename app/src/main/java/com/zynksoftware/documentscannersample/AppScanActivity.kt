@@ -12,7 +12,11 @@ import android.os.Environment
 import android.os.Environment.DIRECTORY_DCIM
 import android.provider.MediaStore
 import android.util.Log
+import android.view.ViewGroup
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.view.updateLayoutParams
 import com.fondesa.kpermissions.allGranted
 import com.fondesa.kpermissions.allShouldShowRationale
 import com.fondesa.kpermissions.extension.permissionsBuilder
@@ -53,6 +57,7 @@ class AppScanActivity : ScanActivity(), ImageAdapterListener {
         binding = AppScanActivityLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         addFragmentContentLayout()
+        setupEdgeToEdge()
     }
 
     override fun onError(error: DocumentScannerErrorModel) {
@@ -182,7 +187,7 @@ class AppScanActivity : ScanActivity(), ImageAdapterListener {
         binding.viewPagerTwo.isUserInputEnabled = false
 
         binding.previousButton.setOnClickListener {
-            binding.viewPagerTwo.currentItem = binding.viewPagerTwo.currentItem - 1
+            binding.viewPagerTwo.currentItem -= 1
             binding.nextButton.isVisible = true
             if (binding.viewPagerTwo.currentItem == 0) {
                 binding.previousButton.isVisible = false
@@ -190,7 +195,7 @@ class AppScanActivity : ScanActivity(), ImageAdapterListener {
         }
 
         binding.nextButton.setOnClickListener {
-            binding.viewPagerTwo.currentItem = binding.viewPagerTwo.currentItem + 1
+            binding.viewPagerTwo.currentItem += 1
             binding.previousButton.isVisible = true
             if (binding.viewPagerTwo.currentItem == fileList.size - 1) {
                 binding.nextButton.isVisible = false
@@ -209,6 +214,24 @@ class AppScanActivity : ScanActivity(), ImageAdapterListener {
         alertDialog = alertDialogBuilder?.create()
         alertDialog?.setCanceledOnTouchOutside(false)
         alertDialog?.show()
+    }
+
+    private fun setupEdgeToEdge() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            with(binding) {
+                viewPagerTwo.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                    topMargin = systemBarsInsets.top
+                }
+
+                bottomBar.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                    bottomMargin = systemBarsInsets.bottom
+                }
+            }
+
+            insets
+        }
     }
 
     private val File.size get() = if (!exists()) 0.0 else length().toDouble()
