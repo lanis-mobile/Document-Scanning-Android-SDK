@@ -45,42 +45,49 @@
 
         </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/galleryButton"
-            android:layout_width="@dimen/zdc_gallery_button_dimens"
-            android:layout_height="@dimen/zdc_gallery_button_dimens"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="@dimen/zdc_medium_padding"
-            android:layout_marginBottom="@dimen/zdc_medium_padding"
-            android:contentDescription="@string/select_from_gallery"
-            android:src="@drawable/zdc_gallery_icon"
-            android:visibility="gone"
-            tools:visibility="visible" />
+        <RelativeLayout
+            android:id="@+id/bottomBar"
+            android:paddingBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <View
-            android:id="@+id/cameraCaptureButton"
-            android:layout_width="@dimen/zdc_camera_button_dimens"
-            android:layout_height="@dimen/zdc_camera_button_dimens"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/zdc_xxx_big_padding"
-            android:background="@drawable/camera_button_circle" />
+            <ImageView
+                android:id="@+id/galleryButton"
+                android:layout_width="@dimen/zdc_gallery_button_dimens"
+                android:layout_height="@dimen/zdc_gallery_button_dimens"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="@dimen/zdc_medium_padding"
+                android:layout_marginBottom="@dimen/zdc_medium_padding"
+                android:contentDescription="@string/select_from_gallery"
+                android:src="@drawable/zdc_gallery_icon"
+                android:visibility="gone"
+                tools:visibility="visible" />
 
-        <TextView
-            android:id="@+id/cancelButton"
-            style="@style/ZdcTextView14sp.White"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/zdc_gallery_button_dimens"
-            android:layout_alignStart="@+id/cameraCaptureButton"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="@dimen/zdc_medium_padding"
-            android:layout_marginBottom="@dimen/zdc_medium_padding"
-            android:gravity="center"
-            android:padding="@dimen/zdc_x_small_padding"
-            android:text="@string/zdc_cancel" />
+            <View
+                android:id="@+id/cameraCaptureButton"
+                android:layout_width="@dimen/zdc_camera_button_dimens"
+                android:layout_height="@dimen/zdc_camera_button_dimens"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/zdc_xxx_big_padding"
+                android:background="@drawable/camera_button_circle" />
+
+            <TextView
+                android:id="@+id/cancelButton"
+                style="@style/ZdcTextView14sp.White"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/zdc_gallery_button_dimens"
+                android:layout_alignStart="@+id/cameraCaptureButton"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/zdc_medium_padding"
+                android:layout_marginBottom="@dimen/zdc_medium_padding"
+                android:gravity="center"
+                android:padding="@dimen/zdc_x_small_padding"
+                android:text="@string/zdc_cancel" />
+        </RelativeLayout>
 
         <com.zynksoftware.documentscanner.ui.components.ProgressView
             android:id="@+id/progressLayout"

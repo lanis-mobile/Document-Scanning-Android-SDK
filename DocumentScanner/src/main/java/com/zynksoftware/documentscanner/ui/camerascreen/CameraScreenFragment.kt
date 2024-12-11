@@ -333,8 +333,14 @@ internal class CameraScreenFragment : BaseFragment(), ScanSurfaceListener {
     override fun configureEdgeToEdgeInsets(insets: WindowInsetsCompat) {
         val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 
-        binding.topBar.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-            topMargin = systemBarsInsets.top
+        with(binding) {
+            topBar.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                topMargin = systemBarsInsets.top
+            }
+
+            bottomBar.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = systemBarsInsets.bottom
+            }
         }
     }
 }
