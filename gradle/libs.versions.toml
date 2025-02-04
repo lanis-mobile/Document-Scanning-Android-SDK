@@ -1,15 +1,15 @@
 [versions]
-agp = "8.7.3"
-camera = "1.4.0"
-kotlin = "2.1.0"
+agp = "8.8.0"
+camera = "1.4.1"
+kotlin = "2.1.10"
 
 [libraries]
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
 androidx-core-ktx = "androidx.core:core-ktx:1.15.0"
 androidx-appcompat = "androidx.appcompat:appcompat:1.7.0"
-androidx-activity = "androidx.activity:activity-ktx:1.9.3"
+androidx-activity = "androidx.activity:activity-ktx:1.10.0"
 rxandroid = "io.reactivex.rxjava3:rxandroid:3.0.0"
-tiny-opencv = "com.github.zynkware:Tiny-OpenCV:4.4.0-4"
+tiny-opencv = "com.github.Hazzatur:Tiny-OpenCV:4.11.0-2"
 camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "camera" }
 camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "camera" }
 camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "camera" }
